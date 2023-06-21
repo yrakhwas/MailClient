@@ -1,0 +1,35 @@
+﻿<Window x:Class="MailClient.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MailClient"
+        mc:Ignorable="d"
+        Title="Window1" Height="200" Width="300">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="MaxWidth" Value="100"></Setter>
+            <Setter Property="Margin" Value="2px"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Width="Auto" Height="Auto" VerticalContentAlignment="Center">Email</Label>
+        <Label Grid.Row="1" Grid.Column="0" Width="Auto" Height="Auto" VerticalContentAlignment="Center">Password</Label>
+        <TextBox x:Name="EmailForm" Grid.Column="1" VerticalContentAlignment="Center" Margin="5px" Height="25px"></TextBox>
+        <PasswordBox x:Name="PassForm" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" Margin="5px" Height="25px"></PasswordBox>
+        <StackPanel Grid.Column="1" Grid.Row="2">
+        <Button x:Name="LoginBTN" Click="LoginBTN_Click">Login</Button>
+        <Button x:Name="ExitBTN" Click="ExitBTN_Click">Exit</Button>
+            
+        </StackPanel>
+    </Grid>
+</Window>
