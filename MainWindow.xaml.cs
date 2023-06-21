@@ -29,6 +29,7 @@ namespace MailClient
     public partial class MainWindow : Window
     {
         private Credentials _credentials;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -39,8 +40,8 @@ namespace MailClient
             InitializeComponent();
             _credentials = credentials;
 
-            string login = _credentials.Login;
-            string password = _credentials.Password;
+            //string login = _credentials.Login;
+            //string password = _credentials.Password;
         }
 
         private void IncomingM_Click(object sender, RoutedEventArgs e)
@@ -95,36 +96,8 @@ namespace MailClient
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //string server = "pop.gmail.com";
-            //int port = 995;
-            //bool useSsl = true;
-            //string username = _credentials.Login;// "yrakhwas@gmail.com";
-            //string password = _credentials.Password;  //"avhejlprpqzoljry";
-            //MailMessage mail = new MailMessage(username, toTxtBox.Text)
-            //{
-            //    Subject = subjectTxtBox.Text,
-            //    Body = $"<h1>My Mail Message from C#</h1><p>{bodyTxtBox.Text}</p>",
-            //    IsBodyHtml = true,
-            //    Priority = MailPriority.High
-            //};
-
-            //// add attachments
-            //var result = MessageBox.Show("Do you want to attach a file?", "Attach File", MessageBoxButton.YesNo);
-            //if (result == MessageBoxResult.Yes)
-            //{
-            //    OpenFileDialog dialog = new OpenFileDialog();
-            //    if (dialog.ShowDialog() == true)
-            //        mail.Attachments.Add(new Attachment(dialog.FileName));
-            //}
-
-            //// send mail message
-            //SmtpClient client = new SmtpClient("smtp.gmail.com", 587)
-            //{
-            //    Credentials = new NetworkCredential(username, password),
-            //    EnableSsl = true
-            //};
-
-            //client.Send(mail);
+           Window2 window2 = new Window2(_credentials);
+            window2.Show();
         }
     }
 }
